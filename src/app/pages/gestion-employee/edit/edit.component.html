@@ -1,0 +1,44 @@
+<h5>Modification des infos de l'employée</h5>
+<form [formGroup]="formEmployee" (ngSubmit)="submit()">
+    <div class="form-group">
+    <label for="Nom">Nom Employee</label>
+    <input [ngClass]="{'is-invalid': submitted && f.employeeFirstName.errors}" formControlName="employeeFirstName" class="form-control"  type="text">
+    <div *ngIf="f.employeeFirstName.errors" class="invalid-feedback">
+        <div *ngIf="f.employeeFirstName.errors.required">
+            <i>Le nom est obligatoire</i>
+        </div>
+    </div>
+</div>
+   <div class="form-group">
+    <label for="Prenom">Prénom</label>
+    <input [ngClass]="{'is-invalid': submitted && f.employeeLastName.errors}"   formControlName="employeeLastName" class="form-control"   type="text">
+    <div *ngIf="f.employeeLastName.errors" class="invalid-feedback">
+        <div *ngIf="f.employeeLastName.errors.required">
+            <i>Le Prénom est obligatoire</i>
+        </div>
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="phone">Numéro de téléphone</label>
+    <input [ngClass]="{'is-invalid': submitted && f.employeePhoneNumber.errors}"  formControlName="employeePhoneNumber" class="form-control"  type="text">
+    <div *ngIf="f.employeePhoneNumber.errors" class="invalid-feedback">
+        <div *ngIf="f.employeePhoneNumber.errors.required">
+            <i>Le Numéro du téléphone est obligatoire</i>
+        </div>
+    </div>  
+</div>
+   <div class="form-group">
+     <label for="Dpartment"> Dpartement </label>
+    <select [ngClass]="{'is-invalid': submitted && f.departmentId.errors}"   formControlName="departmentId" class="form-control"   name="department" id="department">
+        <option *ngFor="let d of listDepartments" value="{{d?.id}}" > {{ d?.departmentName }} </option>
+    </select>
+    <div *ngIf="f.departmentId.errors" class="invalid-feedback">
+        <div *ngIf="f.departmentId.errors.required">
+            <i>Le Departement est obligatoire</i>
+        </div>
+    </div> 
+   </div>
+   <div class="form-group">
+    <Button *ngIf="!f.departmentId.errors" type="submit" class="btn btn-outline-success mt-2"> Valider modification</Button>
+   </div>
+</form>

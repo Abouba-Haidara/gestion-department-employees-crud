@@ -1,0 +1,12 @@
+<form [formGroup]="departForm"  (ngSubmit)="submit()">
+    <div class="form-group">
+       <label for="department">Nom de departement</label>
+     <input [ngClass]="{'is-invalid': submitted && f.departmentName.errors}" formControlName="departmentName" type="text" id="department" class="form-control" placeholder="Saisi le  nom de departement">
+     <div *ngIf="f.departmentName.errors" class="invalid-feedback">
+        <div *ngIf="f.departmentName.errors.required">
+            <i>Le nom du department est obligatoire</i>
+        </div>
+     </div>
+    </div>
+    <button class="btn btn-outline-primary mt-3 btn-sm"> Ajouter</button>
+</form>
