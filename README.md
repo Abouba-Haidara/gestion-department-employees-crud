@@ -1,4 +1,17 @@
-# GestionDepEmployees x
+# CRATION DE CRUD Gestion-Depepartment-Employees
+
+ Création de rest api avec SPRING BOOT, MySQL, ANGULAR;
+
+ ## Opérations
+Insertion des données dans la base de données. <br />
+Obtenir toutes les données de la base de données.<br />
+Obtenir des données basées sur l'ID.<br />
+Mise à jour des données en fonction de l'ID.<br />
+Suppression des données en fonction de l'ID.<br />
+Suppression des données dans la base de données.<br />
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
 
